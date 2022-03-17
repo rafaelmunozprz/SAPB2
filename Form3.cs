@@ -29,14 +29,15 @@ namespace SAPB2
             string contrasena = tbContrasena.Text;
             string usuario = tbUsuario.Text;
             string puerto = tbPuerto.Text;
-            if (servidor.Equals("") || contrasena.Equals("") || usuario.Equals("") || puerto.Equals(""))
+            string baseDatos = tbBaseDatos.Text;
+            if (servidor.Equals("") || contrasena.Equals("") || usuario.Equals("") || puerto.Equals("") || baseDatos.Equals(""))
             {
                 MessageBox.Show("No puede haber campos vacíos");
             }
             else
             {
                 Conexion conectar = new Conexion();
-                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT TOP 1" + "\"CardCode\"," + "\"CardName\"," + "\"CardType\"," + "\"Address\"," + "\"ZipCode\"," + "\"MailAddres\"," + "\"MailZipCod\"," + "\"Phone1\" FROM " + "\"OCRD\" WHERE " + "\"CardType\" = 'S' ", conectar.ConnectionHANA(servidor, usuario, contrasena, puerto));
+                OdbcDataAdapter dat = new OdbcDataAdapter("SELECT TOP 1" + "\"CardCode\"," + "\"CardName\"," + "\"CardType\"," + "\"Address\"," + "\"ZipCode\"," + "\"MailAddres\"," + "\"MailZipCod\"," + "\"Phone1\" FROM " + "\""+baseDatos+"\"." + "\"OCRD\" WHERE " + "\"CardType\" = 'S' ", conectar.ConnectionHANA(servidor, usuario, contrasena, puerto));
                 DataSet ds = new DataSet();
                 dat.Fill(ds);
                 dataGridView1.DataSource = ds.Tables[0];

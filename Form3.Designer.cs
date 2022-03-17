@@ -38,6 +38,8 @@
             this.tbServidor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbPuerto = new System.Windows.Forms.TextBox();
+            this.tbBaseDatos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,11 +48,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 72);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 366);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 337);
             this.dataGridView1.TabIndex = 19;
             // 
             // button1
@@ -128,11 +130,29 @@
             this.tbPuerto.Size = new System.Drawing.Size(205, 23);
             this.tbPuerto.TabIndex = 21;
             // 
+            // tbBaseDatos
+            // 
+            this.tbBaseDatos.Location = new System.Drawing.Point(93, 72);
+            this.tbBaseDatos.Name = "tbBaseDatos";
+            this.tbBaseDatos.Size = new System.Drawing.Size(205, 23);
+            this.tbBaseDatos.TabIndex = 23;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 15);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Base de Datos";
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.tbBaseDatos);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.tbPuerto);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
@@ -164,5 +184,7 @@
         private TextBox tbServidor;
         private Label label5;
         private TextBox tbPuerto;
+        private TextBox tbBaseDatos;
+        private Label label2;
     }
 }
